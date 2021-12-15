@@ -1,0 +1,5 @@
+Name is Ayn Rand of age 0
+Name is Friedrich Nietzsche of age 0
+Name is Stephen Hicks of age 50
+Name is Jordan Peterson of age 50
+Name is Johnathan Haidt of age 50

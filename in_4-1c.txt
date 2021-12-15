@@ -1,0 +1,5 @@
+Ayn|Rand|0|
+Friedrich|Nietzsche|0|
+Stephen|Hicks|50|
+Jordan|Peterson|50|
+Johnathan|Haidt|50

@@ -11,62 +11,50 @@ public class FilePlay {
 	
 	
 
-	private static int copyFile(String inFile, String outFile) throws IOException  {
+	private static void copyFile(String inFile, String outFile) throws IOException, FileNotFoundException {
 		
 		BufferedWriter out = null;
 		BufferedReader in = null;
 		
-		try {
-			in = new BufferedReader(new FileReader(inFile));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		try {
-			out = new BufferedWriter(new FileWriter(outFile));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		in = new BufferedReader(new FileReader(inFile));
+		out = new BufferedWriter(new FileWriter(outFile));
 		
-		int c;
-		while((c = in.read()) != -1) {
+		
+		String line;
+		while((line = in.readLine()) != null) {
 			
-			
-			try {
-				out.write(c);
-			}catch(FileNotFoundException e) {
-				e.printStackTrace();
-				return -1;
-			}catch(IOException e) {
-				e.printStackTrace();
-				return -2;
-			}
+			String[] tokens = line.split("\\|");
+			out.write(String.format("Name is %s %s of age %s\n", tokens[0], tokens[1], tokens[2]));
 			
 		
 		}
 		in.close();
 		out.close();
-		return 0;
+		
 	}
 
 	public static void main(String[]args) throws IOException {
 		
-	int err = FilePlay.copyFile("people.txt","newOutput.txt");
-	
-		switch(err) {
 		
-		case 0: System.out.println("File was copied Successfully! Wahoo!");
-			break;
-		case -1: System.out.println("File Could not be Opened! Drat!");
-			break;
-		case -2:System.out.println("File I/O ERROR! Dag Nabbit!");
-			break;
-		}
+	try {
+		FilePlay.copyFile("in_4-1d.txt","/home/_ryan/Desktop/School_GCU/CST239/workspaceCST-209/topic4-1d/out_4-1d.txt");
+		
+	}catch(FileNotFoundException e) {
+		
+		e.printStackTrace();
+		System.out.println("File could not be opened.");
+	}catch(IOException e){
+		e.printStackTrace();
+		System.out.println("File I/O error");
+	}
+		
 	
 	}
 	
 	
 	
-}//FilePlay
+}//FilePlay	break;
+
 
 /*
 
