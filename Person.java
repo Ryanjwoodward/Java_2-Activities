@@ -2,95 +2,71 @@ package app;
 
 public class Person {
 	
-	private String _name;
-	private int _age;
-	private double _weight, _height;
-	private boolean _hungry;
+	// TODO Auto-generated method stub
+	private String _firstName;
+	private String _lastName;
 	
-
-	public Person(String name, int age, double weight, double height, boolean hungry) {
-		
-		super();
-		this._name = name;
-		this._age = age;
-		this._weight = weight;
-		this._height = height;
-		this._hungry = hungry;
+	
+	public String get_firstName() {
+		return _firstName;
+	}
+	public String get_lastName() {
+		return _lastName;
 	}
 	
-	//----------------------------------
-	//Accessors and Mutators
-	//----------------------------------
-	public String get_name() {
-		return _name;
-	}
-
-	public void set_name(String _name) {
-		this._name = _name;
-	}
-
-	public int get_age() {
-		return _age;
-	}
-
-	public void set_age(int _age) {
-		this._age = _age;
-	}
-
-	public double get_weight() {
-		return _weight;
-	}
-
-	public void set_weight(double _weight) {
-		this._weight = _weight;
-	}
-
-	public double get_height() {
-		return _height;
-	}
-
-	public void set_height(double _height) {
-		this._height = _height;
-	}
-
-	public boolean is_hungry() {
-		return _hungry;
-	}
-
-	public void set_hungry(boolean _hungry) {
-		this._hungry = _hungry;
-	}
-
 	
-	//------------------------------------
-	//Behavior Methods
-	//------------------------------------
-	
-	public void walk() {
+	public Person(String firstName, String lastName) {
 		
-		System.out.println("I am in walk()");
+		this._firstName = firstName;
+		this._lastName = lastName;
 	}
 	
-	public float run(float distance) {
+	public Person(Person person) {
 		
-		System.out.println("I am in run()");
-		
-		return 0;
+		this._firstName = person.get_firstName();
+		this._lastName = person.get_lastName();
 	}
-
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		Person aPerson = new Person("Till", 53, 205.4, 6.2, true);
-		System.out.println("My name is " + aPerson.get_name());
+	
+	@Override
+	public boolean equals(Object other) {
 		
-		aPerson.walk();
-		aPerson.run((float)25.2);
+		if(other == this) {
+			
+			System.out.println("Iam here in other == this");
+			return true;
+		}
+		
+		if(other == null) {
+			
+			System.out.println("Iam her in other == null");
+			return false;
+		}
+		
+		if(getClass() != other.getClass()) {
+			
+			System.out.println("Iam her in getClass() != other.getClass()");
+			return false;
+		}
+		
+		Person person = (Person)other;
+		return (this._firstName == person._firstName && this._lastName == person._lastName);
+		
 	}
+	
+	@Override
+	public String toString() {
+		
+		return "My Class is " + getClass() + " " + this._firstName + " " + this._lastName;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
-}
-
-/*
-
- */
+}//Person Class
