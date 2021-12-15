@@ -1,78 +1,111 @@
-//Author: Ryan Woodward
-//Class: CST-239
-//Date Started: 9/9/2021
+/**
+ * 
+ */
+package app;
 
-package car;
-
+/**
+ * @author Ryan Woodward
+ *
+ */
 public class Car {
 	
-	private Engine _engine;
-	private Tire _tire1, _tire2, _tire3, _tire4;
-	private int _designationNum;
-	private int _speed;
+	private int _year;
+	private String _make;
+	private String _model;
+	private int _odometer;
+	private double _engineLiters;
 	
-	
+
 	public Car() {
-		
-		_engine = new Engine();
-		_tire1 = new Tire();
-		_tire2 = new Tire();
-		_tire3 = new Tire();
-		_tire4 = new Tire();
-		_designationNum = 0;
-		_speed = 0;
+		this._year = 0;
+		this._make = "";
+		this._model="";
+		this._odometer = 0;
+		this._engineLiters = 0;
+	}
+	
+	/**
+	 * @param _year
+	 * @param _make
+	 * @param _model
+	 * @param _odometer
+	 * @param _engineLiters
+	 */
+	public Car(int _year, String _make, String _model, int _odometer, double _engineLiters) {
+		this._year = _year;
+		this._make = _make;
+		this._model = _model;
+		this._odometer = _odometer;
+		this._engineLiters = _engineLiters;
+	}
+	/**
+	 * @return the _year
+	 */
+	public int get_year() {
+		return _year;
 	}
 
-	public Car(double engineNum, int tirePressure, int designationNum) {
-		
-		System.out.println("CAR overloaded constr accessed!");
-		
-		_engine = new Engine(engineNum);
-		_tire1 = new Tire(tirePressure, 1);
-		_tire2 = new Tire(tirePressure, 2);
-		_tire3 = new Tire(tirePressure, 3);
-		_tire4 = new Tire(tirePressure, 4);
-		this._designationNum = designationNum;
-		_speed = 0;
-		
-	}
-	
-	public Engine get_engine() {
-		return _engine;
+	/**
+	 * @param _year the _year to set
+	 */
+	public void set_year(int _year) {
+		this._year = _year;
 	}
 
-	public int get_designationNum() {
-		return _designationNum;
+	/**
+	 * @return the _make
+	 */
+	public String get_make() {
+		return _make;
 	}
 
-	public void set_designationNum(int _designationNum) {
-		this._designationNum = _designationNum;
+	/**
+	 * @param _make the _make to set
+	 */
+	public void set_make(String _make) {
+		this._make = _make;
 	}
 
-	public int get_speed() {
-		return _speed;
+	/**
+	 * @return the _model
+	 */
+	public String get_model() {
+		return _model;
 	}
 
-	public void set_speed(int _speed) {
-		this._speed = _speed;
+	/**
+	 * @param _model the _model to set
+	 */
+	public void set_model(String _model) {
+		this._model = _model;
 	}
-	
-	public int getTirePressure() {
-		
-		int tp;
-		
-		tp = _tire1.get_tirePressure();
-		
-		return tp;
-	}
-	
-	public void setTirePressure(int tp) {
-		
-		_tire1.set_tirePressure(tp);
-	}
-	
-	
-	
-	
 
-}
+	/**
+	 * @return the _odometer
+	 */
+	public int get_odometer() {
+		return _odometer;
+	}
+
+	/**
+	 * @param _odometer the _odometer to set
+	 */
+	public void set_odometer(int _odometer) {
+		this._odometer = _odometer;
+	}
+
+	/**
+	 * @return the _engineLiters
+	 */
+	public double get_engineLiters() {
+		return _engineLiters;
+	}
+
+	/**
+	 * @param _engineLiters the _engineLiters to set
+	 */
+	public void set_engineLiters(double _engineLiters) {
+		this._engineLiters = _engineLiters;
+	}
+
+}//Car Class
