@@ -1,34 +1,23 @@
 package app;
 
-import java.util.Arrays;
-
 public class Test {
-	
+
 	public static void main(String[] args) {
-		/*
-		Person person1 = new Person("Jean-Luc", "Picard");
-		
-		person1.walk();
-		person1.run();
-		System.out.println(person1.get_lastName() + " is running " + person1.isRunning());
-		person1.run();
-		System.out.println(person1.get_lastName() + " is running " + person1.isRunning());
-		*/
-		
-		Person[] persons = new Person[4];
-		persons[0] = new Person("Jean-Luc", "Picard");
-		persons[1] = new Person("William", "Riker");
-		persons[2] = new Person("Lt.Cmdr", "Data");
-		persons[3] = new Person("Beverly", "Crusher");
-		
-		Arrays.sort(persons);
-		for(int idx =0; idx < 4; idx++) {
+
+		ShapeBase[] shapes = new ShapeBase[4];
+		shapes[0] = new Rectangle("rectangle", 10, 200);
+		shapes[1] = new Triangle("Triangle", 10, 50);
+		shapes[2] = new Trapezoid("Trapezoid", 10, 8, 13);
+		shapes[3] = new Circle("Circle", 5, 5);
+
+		for (int idx = 0; idx < shapes.length; idx++) {
 			
-			System.out.println(persons[idx].get_firstName() + " " + persons[idx].get_lastName());
+			displayArea(shapes[idx]);
 		}
-		
-	
-	
+
 	}
 
+	private static void displayArea(ShapeBase shape) {
+		System.out.println("This shape is a " + shape.getName() + " with an area of " + shape.calculateArea());
+	}
 }
